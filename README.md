@@ -8,38 +8,41 @@
 
 [中文说明](#中文说明-1)
 -----
+
 ## What is XuperChain
 
 **XuperChain**, the first open source project of **XuperChain Lab**, introduces a underlying solution to build the super alliance network. Based on the dynamic kernel of xupercore. You can use xuberchain as a blockchain infrastructure to build a compliant blockchain network.
 
 XuperChain is the underlying solution for union networks with following highlight features:
+
 * **Dynamic kernel**
 
-    * Based on the dynamic kernel technology, the free extension kernel components without kernel code intrusion and lightweight extension customized kernel engine are implemented to meet the needs of blockchain implementation for various scenarios.
-    * It provides a comprehensive and high-performance implementation of standard kernel components.
-    * Comprehensively reduce the cost of blockchain research and development, and open a new era of one click chain development.
+  * Based on the dynamic kernel technology, the free extension kernel components without kernel code intrusion and lightweight extension customized kernel engine are implemented to meet the needs of blockchain implementation for various scenarios.
+  * It provides a comprehensive and high-performance implementation of standard kernel components.
+  * Comprehensively reduce the cost of blockchain research and development, and open a new era of one click chain development.
 
 * **High Performance**
 
-    * Creative XuperModel technology makes contract execution and verification run parallelly.
-    * TDPoS ensures quick consensus in a large scale network.
-    * WASM VM using AOT technology.
+  * Creative XuperModel technology makes contract execution and verification run parallelly.
+  * TDPoS ensures quick consensus in a large scale network.
+  * WASM VM using AOT technology.
 
 * **Solid Security**
 
-    * Contract account protected by multiple private keys ensures assets safety.
-    * Flexible authorization system supports weight threshold, AK sets and could be easily extended.
+  * Contract account protected by multiple private keys ensures assets safety.
+  * Flexible authorization system supports weight threshold, AK sets and could be easily extended.
 
 * **High Scalability**
 
-    * Robust P2P network supports a large scale network with thousands of nodes.
-    * Branch management on ledger makes automatic convergence consistency and supports global deployment.
+  * Robust P2P network supports a large scale network with thousands of nodes.
+  * Branch management on ledger makes automatic convergence consistency and supports global deployment.
 
 * **Multi-Language Support**: Support pluggable multi-language contract VM using XuperBridge technology.
 
 * **Flexibility**:  Modular and pluggable design provides high flexibility for users to build their blockchain solutions for various business scenarios.
 
 ## Contact
+
 E-mail: xchain-help@baidu.com
 
 ## Quick start
@@ -55,7 +58,7 @@ E-mail: xchain-help@baidu.com
 
 Clone the repository
 
-```
+``` bash
 git clone https://github.com/xuperchain/xuperchain
 ```
 
@@ -63,7 +66,7 @@ git clone https://github.com/xuperchain/xuperchain
 
 Enter the xuperchain folder and build the code:
 
-```
+``` bash
 cd xuperchain
 make
 ```
@@ -71,16 +74,18 @@ make
 Note that if you are using Go 1.11 or later, go modules are used to download 3rd-party dependencies by default. You can also disable go modules and use the prepared dependencies under vendor folder.
 
 Run test:
-```
+
+``` bash
 make test
 ```
 
-### Run 
+### Run
 
 #### Run single node blockchain
+
 There is an output folder if build successfully. Enter the output folder, create a default chain & start blockchains:
 
-```
+``` bash
 cd ./output
 sh control.sh start
 ```
@@ -89,7 +94,7 @@ By doing this, a blockchain named "xuper" is created, you can find the data of t
 
 By default, the `xuper` chain will produce a block every 3 seconds, try the following command to see the `trunkHeight` of chain and make sure it's growing.
 
-```
+``` bash
 ./bin/xchain-cli status
 ```
 
@@ -97,12 +102,14 @@ By default, the `xuper` chain will produce a block every 3 seconds, try the foll
 
 Generate multi nodes.
 Before running the following command, make sure you have run `make` to make the code.
-```
+
+``` bash
 make testnet
 ```
 
 Enter the testnet directory, and then start three nodes separately (make sure the port is not used)
-```
+
+``` bash
 cd ./testnet/node1
 sh ./control.sh start
 cd ../node2
@@ -112,7 +119,8 @@ sh ./control.sh start
 ```
 
 Observe the status of each node
-```
+
+``` bash
 ./bin/xchain-cli status -H :37101
 ./bin/xchain-cli status -H :37102
 ./bin/xchain-cli status -H :37103
@@ -132,7 +140,6 @@ Please review the [Contribution guidelines](https://github.com/xuperchain/xuperc
 
 XuperChain is under the [Apache License, Version 2.0](https://github.com/xuperchain/xuperchain/blob/master/LICENSE).
 
-
 =====
 
 # 中文说明
@@ -143,29 +150,30 @@ XuperChain is under the [Apache License, Version 2.0](https://github.com/xuperch
 。
 
 核心特点
+
 * **动态内核**
-    * 基于动态内核技术，实现无内核代码侵入的自由扩展内核核心组件和轻量级的扩展订制内核引擎，满足面向各类场景的区块链实现的需要。
-    * 提供了全面的、高性能的标准内核组件实现。
-    * 全面降低区块链研发成本，开启一键发链新时代。
+  * 基于动态内核技术，实现无内核代码侵入的自由扩展内核核心组件和轻量级的扩展订制内核引擎，满足面向各类场景的区块链实现的需要。
+  * 提供了全面的、高性能的标准内核组件实现。
+  * 全面降低区块链研发成本，开启一键发链新时代。
 
 * **高性能**
-    * 原创的XuperModel模型，真正实现了智能合约的并发执行和验证。
-    * TDPOS算法确保大规模节点下的快速共识。
-    * 使用AOT加速的WASM虚拟机，合约运行速度接近native程序。
+  * 原创的XuperModel模型，真正实现了智能合约的并发执行和验证。
+  * TDPOS算法确保大规模节点下的快速共识。
+  * 使用AOT加速的WASM虚拟机，合约运行速度接近native程序。
 
 * **更安全**
-    * 多私钥保护的账户体系。
-    * 鉴权支持权重累计、集合运算等灵活的策略。
+  * 多私钥保护的账户体系。
+  * 鉴权支持权重累计、集合运算等灵活的策略。
 
 * **易扩展**
-    * 鲁棒的P2P网络，支持广域网超大规模节点。
-    * 底层账本支持分叉管理，自动收敛一致性，实现真正全球化部署。
+  * 鲁棒的P2P网络，支持广域网超大规模节点。
+  * 底层账本支持分叉管理，自动收敛一致性，实现真正全球化部署。
 
 * **多语言开发智能合约**
-    * 通过原创的XuperBridge技术，可插拔多语言虚拟机。
+  * 通过原创的XuperBridge技术，可插拔多语言虚拟机。
 
 * **高灵活性**
-    * 可插拔、插件化的设计使得用户可以方便选择适合自己业务场景的解决方案。
+  * 可插拔、插件化的设计使得用户可以方便选择适合自己业务场景的解决方案。
 
 ## 快速试用
 
@@ -179,25 +187,29 @@ XuperChain is under the [Apache License, Version 2.0](https://github.com/xuperch
 ### 构建
 
 克隆XuperChain仓库
-```
+
+``` bash
 git clone https://github.com/xuperchain/xuperchain
 ```
 
 **注意**: `master` 分支是日常开发分支，会包含最新的功能，但是 **不稳定**。生产环境请使用最新的已发布分支，最新的已发布分支是`v3.10`。
 
 编译
-```
+
+``` bash
 cd xuperchain
 make
 ```
 
-跑单测
-```
+跑单元测试
+
+``` bash
 make test
 ```
 
 单机版xchain
-```
+
+``` bash
 cd ./output
 sh ./control.sh start
 ./bin/xchain-cli status
@@ -207,12 +219,14 @@ sh ./control.sh start
 
 生成多节点。
 在运行下面的命令之前，请确保已经运行`make`去编译代码。
-```
+
+``` bash
 make testnet
 ```
 
 进入testnet目录，分别启动三个节点(确保端口未被占用)。
-```
+
+``` bash
 cd ./testnet/node1
 sh ./control.sh start
 cd ../node2
@@ -222,7 +236,8 @@ sh ./control.sh start
 ```
 
 观察每个节点状态
-```
+
+``` bash
 ./bin/xchain-cli status -H :37101
 ./bin/xchain-cli status -H :37102
 ./bin/xchain-cli status -H :37103
@@ -230,10 +245,10 @@ sh ./control.sh start
 
 ## 文档
 
-
 关于XuperChain更详细、更深入的使用方法链接请查看[XuperChain文档库](https://xuperchain.readthedocs.io/zh/latest/)
 
 ## 如何参与开发
+
 1. 阅读源代码，了解我们当前的开发方向
 2. 找到自己感兴趣的功能或模块
 3. 进行开发，开发完成后自测功能是否正确，并运行make & make test
@@ -241,9 +256,11 @@ sh ./control.sh start
 5. 更多详情请参见[链接](https://github.com/xuperchain/xuperchain/blob/master/CONTRIBUTING_CN.md)
 
 ## 许可证
+
 XuperChain使用的许可证是Apache 2.0
 
 ## 联系我们
+
 商务合作，请Email：xchain-help@baidu.com, 来源请注明Github。
 如果你对XuperChain开源技术及应用感兴趣，欢迎添加“百度超级链·小助手“微信，回复“技术论坛进群”，加入“百度超级链开发者社区”，与百度资深工程师深度交流!微信二维码如下:
 
